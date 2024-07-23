@@ -214,7 +214,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                                <div class="card card-small mb-4">
+                                <div class="card card-small mb-4" style="padding: 30px; width: 1000px">
                                     <form id="registrationForm" action="register_process.php" method="post">
                                         <div class="mb-3">
                                             <label class="form-label"><b>Capture Image</b></label>

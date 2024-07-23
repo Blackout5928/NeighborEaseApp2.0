@@ -136,7 +136,7 @@ if (!isset($_SESSION['id'])) {
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="register.php">
-                  <i class="material-icons">personadd</i>
+                  <i class="material-icons">add</i>
                   <span>Create Account</span>
                 </a>
               </li>

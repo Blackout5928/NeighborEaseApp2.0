@@ -4476,7 +4476,8 @@ a.text-accent:hover, a.text-accent:focus {
     padding: 0.25rem 0.5625rem; }
 
 .add-new-post__editor {
-  min-height: 400px; }
+  min-height: 400px;
+}
 
 html .ql-container.ql-snow,
 html .ql-toolbar.ql-snow {

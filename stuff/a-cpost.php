@@ -113,7 +113,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="register.php">
-                  <i class="material-icons">personadd</i>
+                  <i class="material-icons">add</i>
                   <span>Create Account</span>
                 </a>
               </li>
@@ -212,7 +212,7 @@
                   <div class="card-body">
                     <form class="add-new-post" id="addNewPost" method="POST"  action="query.php">
                       <input class="form-control form-control-lg mb-3" name="formControl" type="text" placeholder="Your Post Title">
-                      <textarea name="editorContainers" class="add-new-post__editor mb-1"></textarea>
+                      <textarea name="editorContainers" class="add-new-post__editor mb-1" style="width: 100%" placeholder="Your Post Content"></textarea>
                       <div class="publish_b mb-1" style="padding-top: 10px;">
                           <button type="submit" class="btn btn-sm btn-accent ml-auto" type="submit" name="ann-post">
                             <i class="material-icons">file_copy</i> Publish

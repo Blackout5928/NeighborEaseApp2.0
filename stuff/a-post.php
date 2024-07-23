@@ -104,7 +104,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="a-userp.php">
-                  <i class="material-icons">personadd</i>
+                  <i class="material-icons">add</i>
                   <span>Create Account</span>
                 </a>
               </li>
@@ -197,9 +197,6 @@
             </div>
             <!-- End Page Header -->
             <div class="row">
-              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                
-                  
                     <?php
                       include 'connection.php';
 
@@ -212,13 +209,15 @@
                         // Output data of each row
                         while($row = $result->fetch_assoc()) {
                     ?>
-                    <div class="card card-small card-post card-post--1">
-                      <div style="width:100%">
-                        <div class="card-body">
-                          <h5 class="card-title">
-                            <p class="text-fiord-blue"><?php echo htmlspecialchars($row['title']); ?></p>
-                          </h5>
-                          <p class="card-text d-inline-block mb-3"><?php echo htmlspecialchars($row['content']); ?></p>
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                      <div class="card card-small card-post card-post--1">
+                        <div style="width:100%">
+                          <div class="card-body">
+                            <h5 class="card-title">
+                              <p class="text-fiord-blue"><?php echo htmlspecialchars($row['title']); ?></p>
+                            </h5>
+                            <p class="card-text d-inline-block mb-3"><?php echo htmlspecialchars($row['content']); ?></p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -231,12 +230,7 @@
                       // Close the connection
                       $con->close();
                     ?>
-                  
-                  
-                  
-                </div>
-              </div>
-
+            </div>
           </div>
           <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
             <ul class="nav">
