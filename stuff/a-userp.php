@@ -37,6 +37,24 @@
           <i class="material-icons">check</i>
         </li>
       </ul>
+      <!-- <div class="actions mb-4">
+        <a class="mb-2 btn btn-sm btn-primary w-100 d-table mx-auto extra-action" href="https://designrevision.com/downloads/shards-dashboard-lite/">
+          <i class="material-icons">cloud</i> Download</a>
+        <a class="mb-2 btn btn-sm btn-white w-100 d-table mx-auto extra-action" href="https://designrevision.com/docs/shards-dashboard-lite">
+          <i class="material-icons">book</i> Documentation</a>
+      </div> -->
+      <!-- <div class="social-wrapper">
+        <div class="social-actions">
+          <h5 class="my-2">Help us Grow</h5>
+          <div class="inner-wrapper">
+            <a class="github-button" href="https://github.com/DesignRevision/shards-dashboard" data-icon="octicon-star" data-show-count="true" aria-label="Star DesignRevision/shards-dashboard on GitHub">Star</a>
+          </div>
+        </div>
+        <div id="social-share" data-url="https://designrevision.com/downloads/shards-dashboard-lite/" data-text="🔥 Check out Shards Dashboard Lite, a free and beautiful Bootstrap 4 admin dashboard template!" data-title="share"></div>
+        <div class="loading-overlay">
+          <div class="spinner"></div>
+        </div>
+      </div> -->
       <div class="close">
         <i class="material-icons">close</i>
       </div>
@@ -53,7 +71,7 @@
               <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
                 <div class="d-table m-auto">
                   <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 30px;" src="images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-                  <span class="d-none d-md-inline ml-1">EJ GreenScape Realty</span>
+                  <span class="d-none d-md-inline ml-1">EJJ GreenScape Realty</span>
                 </div>
               </a>
               <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -73,45 +91,45 @@
           <div class="nav-wrapper">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link " href="index.html">
+                <a class="nav-link " href="a-index.php">
                   <i class="material-icons">edit</i>
                   <span>Dashboard</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="components-blog-posts.html">
+                <a class="nav-link " href="a-post.php">
                   <i class="material-icons">vertical_split</i>
                   <span>Announcement Posts</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="add-new-post.html">
+                <a class="nav-link " href="a-cpost.php">
                   <i class="material-icons">note_add</i>
-                  <span>Add New Post</span>
+                  <span>Add New Posts</span>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link " href="form-components.html">
                   <i class="material-icons">view_module</i>
                   <span>Forms &amp; Components</span>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
-                <a class="nav-link " href="tables.html">
+                <a class="nav-link " href="a-table.php">
                   <i class="material-icons">table_chart</i>
                   <span>Tables</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="user-profile-lite.html">
+                <a class="nav-link active" href="a-userp.php">
                   <i class="material-icons">person</i>
                   <span>User Profile</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="errors.html">
-                  <i class="material-icons">error</i>
-                  <span>Errors</span>
+                <a class="nav-link " href="register.php">
+                  <i class="material-icons">personadd</i>
+                  <span>Create Account</span>
                 </a>
               </li>
             </ul>
@@ -180,7 +198,7 @@
                     <a class="dropdown-item" href="add-new-post.html">
                       <i class="material-icons">note_add</i> Add New Post</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#">
+                    <a class="dropdown-item text-danger" href="logout.php">
                       <i class="material-icons text-danger">&#xE879;</i> Logout </a>
                   </div>
                 </li>
@@ -193,16 +211,140 @@
             </nav>
           </div>
           <!-- / .main-navbar -->
-          <div class="error">
-            <div class="error__content">
-              <h2>500</h2>
-              <h3>Something went wrong!</h3>
-              <p>There was a problem on our end. Please try again later.</p>
-              <button type="button" class="btn btn-accent btn-pill">&larr; Go Back</button>
+          <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <i class="fa fa-check mx-2"></i>
+            <strong>Success!</strong> Your profile has been updated! </div>
+          <div class="main-content-container container-fluid px-4">
+            <!-- Page Header -->
+            <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+                <span class="text-uppercase page-subtitle">Overview</span>
+                <h3 class="page-title">User Profile</h3>
+              </div>
             </div>
-            <!-- / .error_content -->
+            <!-- End Page Header -->
+            <!-- Default Light Table -->
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="card card-small mb-4 pt-3">
+                  <div class="card-header border-bottom text-center">
+                    <div class="mb-3 mx-auto">
+                      <img class="rounded-circle" src="images/avatars/0.jpg" alt="User Avatar" width="110"> </div>
+                    <h4 class="mb-0">Sierra Brooks</h4>
+                    <span class="text-muted d-block mb-2">Project Manager</span>
+                    <button type="button" class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2">
+                      <i class="material-icons mr-1">person_add</i>Follow</button>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item px-4">
+                      <div class="progress-wrapper">
+                        <strong class="text-muted d-block mb-2">Workload</strong>
+                        <div class="progress progress-sm">
+                          <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;">
+                            <span class="progress-value">74%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item p-4">
+                      <strong class="text-muted d-block mb-2">Description</strong>
+                      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="card card-small mb-4">
+                  <div class="card-header border-bottom">
+                    <h6 class="m-0">Account Details</h6>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-3">
+                      <div class="row">
+                        <div class="col">
+                          <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="feFirstName">Name</label>
+                                    <input type="text" class="form-control" id="feFirstName" placeholder="Account Name"> 
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="feFirstName">User Name</label>
+                                    <input type="text" class="form-control" id="UserName" placeholder="User Name"> 
+                                </div>
+                                <!-- <div class="form-group col-md-6">
+                                    <label for="feLastName">Last Name</label>
+                                    <input type="text" class="form-control" id="feLastName" placeholder="Last Name" value="Brooks"> 
+                                </div> -->
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="feEmailAddress">Email</label>
+                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Email" value="sierra@example.com"> </div>
+                              <div class="form-group col-md-6">
+                                <label for="fePassword">Password</label>
+                                <input type="password" class="form-control" id="fePassword" placeholder="Password"> </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="feInputAddress">Address</label>
+                              <input type="text" class="form-control" id="feInputAddress" placeholder="1234 Main St"> </div>
+                            <!-- <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="feInputCity">City</label>
+                                    <input type="text" class="form-control" id="feInputCity"> </div>
+                                <div class="form-group col-md-4">
+                                    <label for="feInputState">State</label>
+                                    <select id="feInputState" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="inputZip">Zip</label>
+                                    <input type="text" class="form-control" id="inputZip"> </div>
+                                </div>
+                                <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="feDescription">Description</label>
+                                    <textarea class="form-control" name="feDescription" rows="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?</textarea>
+                                </div>
+                            </div> -->
+                            <button type="submit" class="btn btn-accent">Update Account</button>
+                          </form>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- End Default Light Table -->
           </div>
-          <!-- / .error -->
+          <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+            </ul>
+            <span class="copyright ml-auto my-auto mr-2">Created Project © 2023
+              <a href="file:///C:/Users/emman/Downloads/New-Project/index.html" rel="nofollow">EJ GreenScape Realty</a>
+            </span>
+          </footer>
         </main>
       </div>
     </div>

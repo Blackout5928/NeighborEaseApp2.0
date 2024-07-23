@@ -37,6 +37,24 @@
           <i class="material-icons">check</i>
         </li>
       </ul>
+      <!-- <div class="actions mb-4">
+        <a class="mb-2 btn btn-sm btn-primary w-100 d-table mx-auto extra-action" href="https://designrevision.com/downloads/shards-dashboard-lite/">
+          <i class="material-icons">cloud</i> Download</a>
+        <a class="mb-2 btn btn-sm btn-white w-100 d-table mx-auto extra-action" href="https://designrevision.com/docs/shards-dashboard-lite">
+          <i class="material-icons">book</i> Documentation</a>
+      </div> -->
+      <!-- <div class="social-wrapper">
+        <div class="social-actions">
+          <h5 class="my-2">Help us Grow</h5>
+          <div class="inner-wrapper">
+            <a class="github-button" href="https://github.com/DesignRevision/shards-dashboard" data-icon="octicon-star" data-show-count="true" aria-label="Star DesignRevision/shards-dashboard on GitHub">Star</a>
+          </div>
+        </div>
+        <div id="social-share" data-url="https://designrevision.com/downloads/shards-dashboard-lite/" data-text="🔥 Check out Shards Dashboard Lite, a free and beautiful Bootstrap 4 admin dashboard template!" data-title="share"></div>
+        <div class="loading-overlay">
+          <div class="spinner"></div>
+        </div>
+      </div> -->
       <div class="close">
         <i class="material-icons">close</i>
       </div>
@@ -53,7 +71,7 @@
               <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
                 <div class="d-table m-auto">
                   <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 30px;" src="images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-                  <span class="d-none d-md-inline ml-1">EJ GreenScape Realty</span>
+                  <span class="d-none d-md-inline ml-1">EJJ GreenScape Realty</span>
                 </div>
               </a>
               <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -73,45 +91,45 @@
           <div class="nav-wrapper">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link " href="index.html">
+                <a class="nav-link " href="a-index.php">
                   <i class="material-icons">edit</i>
                   <span>Dashboard</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="components-blog-posts.html">
+                <a class="nav-link " href="a-post.php">
                   <i class="material-icons">vertical_split</i>
                   <span>Announcement Posts</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="add-new-post.html">
+                <a class="nav-link " href="a-cpost.php">
                   <i class="material-icons">note_add</i>
                   <span>Add New Post</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="form-components.html">
+                <!-- <a class="nav-link " href="form-components.html">
                   <i class="material-icons">view_module</i>
                   <span>Forms &amp; Components</span>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
-                <a class="nav-link " href="tables.html">
+                <a class="nav-link active" href="a-table.php">
                   <i class="material-icons">table_chart</i>
                   <span>Tables</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="user-profile-lite.html">
+                <a class="nav-link " href="a-userp.php">
                   <i class="material-icons">person</i>
                   <span>User Profile</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="errors.html">
-                  <i class="material-icons">error</i>
-                  <span>Errors</span>
+                <a class="nav-link " href="register.php">
+                  <i class="material-icons">personadd</i>
+                  <span>Create Account</span>
                 </a>
               </li>
             </ul>
@@ -180,7 +198,7 @@
                     <a class="dropdown-item" href="add-new-post.html">
                       <i class="material-icons">note_add</i> Add New Post</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#">
+                    <a class="dropdown-item text-danger" href="logout.php">
                       <i class="material-icons text-danger">&#xE879;</i> Logout </a>
                   </div>
                 </li>
@@ -193,16 +211,156 @@
             </nav>
           </div>
           <!-- / .main-navbar -->
-          <div class="error">
-            <div class="error__content">
-              <h2>500</h2>
-              <h3>Something went wrong!</h3>
-              <p>There was a problem on our end. Please try again later.</p>
-              <button type="button" class="btn btn-accent btn-pill">&larr; Go Back</button>
+          <div class="main-content-container container-fluid px-4">
+            <!-- Page Header -->
+            <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+                <span class="text-uppercase page-subtitle">Overview</span>
+                <h3 class="page-title">Data Tables</h3>
+              </div>
             </div>
-            <!-- / .error_content -->
+            <!-- End Page Header -->
+            <!-- Default Light Table -->
+            <div class="row">
+              <div class="col">
+                <div class="card card-small mb-4">
+                  <div class="card-header border-bottom">
+                    <h6 class="m-0">Active Users</h6>
+                  </div>
+                  <div class="card-body p-0 pb-3 text-center">
+                    <table class="table mb-0">
+                      <thead class="bg-light">
+                        <tr>
+                          <th scope="col" class="border-0">#</th>
+                          <th scope="col" class="border-0">First Name</th>
+                          <th scope="col" class="border-0">Last Name</th>
+                          <th scope="col" class="border-0">Country</th>
+                          <th scope="col" class="border-0">City</th>
+                          <th scope="col" class="border-0">Phone</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Ali</td>
+                          <td>Kerry</td>
+                          <td>Russian Federation</td>
+                          <td>Gdańsk</td>
+                          <td>107-0339</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Clark</td>
+                          <td>Angela</td>
+                          <td>Estonia</td>
+                          <td>Borghetto di Vara</td>
+                          <td>1-660-850-1647</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Jerry</td>
+                          <td>Nathan</td>
+                          <td>Cyprus</td>
+                          <td>Braunau am Inn</td>
+                          <td>214-4225</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Colt</td>
+                          <td>Angela</td>
+                          <td>Liberia</td>
+                          <td>Bad Hersfeld</td>
+                          <td>1-848-473-7416</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Default Light Table -->
+            <!-- Default Dark Table -->
+            <div class="row">
+              <div class="col">
+                <div class="card card-small overflow-hidden mb-4">
+                  <div class="card-header bg-dark">
+                    <h6 class="m-0 text-white">Inactive Users</h6>
+                  </div>
+                  <div class="card-body p-0 pb-3 bg-dark text-center">
+                    <table class="table table-dark mb-0">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col" class="border-bottom-0">#</th>
+                          <th scope="col" class="border-bottom-0">First Name</th>
+                          <th scope="col" class="border-bottom-0">Last Name</th>
+                          <th scope="col" class="border-bottom-0">Country</th>
+                          <th scope="col" class="border-bottom-0">City</th>
+                          <th scope="col" class="border-bottom-0">Phone</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Graham</td>
+                          <td>Brent</td>
+                          <td>Benin</td>
+                          <td>Ripabottoni</td>
+                          <td>1-512-760-9094</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Clark</td>
+                          <td>Angela</td>
+                          <td>Estonia</td>
+                          <td>Borghetto di Vara</td>
+                          <td>1-660-850-1647</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Wylie</td>
+                          <td>Joseph</td>
+                          <td>Korea, North</td>
+                          <td>Guelph</td>
+                          <td>325-4351</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Garth</td>
+                          <td>Clementine</td>
+                          <td>Indonesia</td>
+                          <td>Narcao</td>
+                          <td>722-8264</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Default Dark Table -->
           </div>
-          <!-- / .error -->
+          <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+            </ul>
+            <span class="copyright ml-auto my-auto mr-2">Created Project © 2023
+              <a href="C:\xampp\htdocs\web-capstone\stuff\a-index.php" rel="nofollow">EJJ GreenScape Realty</a>
+            </span>
+          </footer>
         </main>
       </div>
     </div>

@@ -53,7 +53,7 @@
               <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
                 <div class="d-table m-auto">
                   <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 30px;" src="images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-                  <span class="d-none d-md-inline ml-1">EJ GreenScape Realty</span>
+                  <span class="d-none d-md-inline ml-1">EJJ GreenScape Realty</span>
                 </div>
               </a>
               <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -73,45 +73,39 @@
           <div class="nav-wrapper">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link " href="index.html">
+                <a class="nav-link " href="a-index.php">
                   <i class="material-icons">edit</i>
                   <span>Dashboard</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="components-blog-posts.html">
+                <a class="nav-link active" href="a-post.php">
                   <i class="material-icons">vertical_split</i>
                   <span>Announcement Posts</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="add-new-post.html">
+                <a class="nav-link " href="a-cpost.php">
                   <i class="material-icons">note_add</i>
                   <span>Add New Post</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="form-components.html">
-                  <i class="material-icons">view_module</i>
-                  <span>Forms &amp; Components</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="tables.html">
+                <a class="nav-link " href="a-table.php">
                   <i class="material-icons">table_chart</i>
                   <span>Tables</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="user-profile-lite.html">
+                <a class="nav-link " href="a-userp.php">
                   <i class="material-icons">person</i>
                   <span>User Profile</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="errors.html">
-                  <i class="material-icons">error</i>
-                  <span>Errors</span>
+                <a class="nav-link " href="a-userp.php">
+                  <i class="material-icons">personadd</i>
+                  <span>Create Account</span>
                 </a>
               </li>
             </ul>
@@ -175,12 +169,12 @@
                   <div class="dropdown-menu dropdown-menu-small">
                     <a class="dropdown-item" href="user-profile-lite.html">
                       <i class="material-icons">&#xE7FD;</i> Profile</a>
-                    <a class="dropdown-item" href="components-blog-posts.html">
+                    <a class="dropdown-item" href="a-post.php">
                       <i class="material-icons">vertical_split</i> Announcement Posts</a>
                     <a class="dropdown-item" href="add-new-post.html">
                       <i class="material-icons">note_add</i> Add New Post</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#">
+                    <a class="dropdown-item text-danger" href="logout.php">
                       <i class="material-icons text-danger">&#xE879;</i> Logout </a>
                   </div>
                 </li>
@@ -193,36 +187,82 @@
             </nav>
           </div>
           <!-- / .main-navbar -->
-          <div class="error">
-            <div class="error__content">
-              <h2>500</h2>
-              <h3>Something went wrong!</h3>
-              <p>There was a problem on our end. Please try again later.</p>
-              <button type="button" class="btn btn-accent btn-pill">&larr; Go Back</button>
+          <div class="main-content-container container-fluid px-4">
+            <!-- Page Header -->
+            <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+                <span class="text-uppercase page-subtitle">Components</span>
+                <h3 class="page-title">Announcement Posts</h3>
+              </div>
             </div>
-            <!-- / .error_content -->
+            <!-- End Page Header -->
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                
+                  
+                    <?php
+                      include 'connection.php';
+
+                      // Fetch data from the `announcement` table
+                      $sql = "SELECT title, content FROM announcement";
+                      $result = $con->query($sql);
+
+                      // Check if there are results
+                      if ($result->num_rows > 0) {
+                        // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                    ?>
+                    <div class="card card-small card-post card-post--1">
+                      <div style="width:100%">
+                        <div class="card-body">
+                          <h5 class="card-title">
+                            <p class="text-fiord-blue"><?php echo htmlspecialchars($row['title']); ?></p>
+                          </h5>
+                          <p class="card-text d-inline-block mb-3"><?php echo htmlspecialchars($row['content']); ?></p>
+                        </div>
+                      </div>
+                    </div>
+                    <br><br>
+                    <?php
+                          }
+                      } else {
+                          echo "<p>No announcements found.</p>";
+                      }
+                      // Close the connection
+                      $con->close();
+                    ?>
+                  
+                  
+                  
+                </div>
+              </div>
+
           </div>
-          <!-- / .error -->
+          <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+            </ul>
+            <span class="copyright ml-auto my-auto mr-2">Created Project © 2023
+              <a href="C:\xampp\htdocs\web-capstone\stuff\a-index.php" rel="nofollow">EJJ GreenScape Realty</a>
+            </span>
+          </footer>
         </main>
       </div>
     </div>
-    <!-- <div class="promo-popup animated">
-      <a href="http://bit.ly/shards-dashboard-pro" class="pp-cta extra-action">
-        <img src="https://dgc2qnsehk7ta.cloudfront.net/uploads/sd-blog-promo-2.jpg"> </a>
-      <div class="pp-intro-bar"> Need More Templates?
-        <span class="close">
-          <i class="material-icons">close</i>
-        </span>
-        <span class="up">
-          <i class="material-icons">keyboard_arrow_up</i>
-        </span>
-      </div>
-      <div class="pp-inner-content">
-        <h2>Shards Dashboard Pro</h2>
-        <p>A premium & modern Bootstrap 4 admin dashboard template pack.</p>
-        <a class="pp-cta extra-action" href="http://bit.ly/shards-dashboard-pro">Download</a>
-      </div>
-    </div> -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

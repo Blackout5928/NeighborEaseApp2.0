@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+    <style>
+        #video-container {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #video {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #result {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">QR Code Scanner</h2>
+    <div id="video-container">
+        <video id="video"></video>
+    </div>
+    <div id="result"></div>
+
+    <!-- Text field to display scanned HomeownerID -->
+    <input type="text" id="homeowner-id" placeholder="HomeownerID" readonly maxlength="12" size="20" required>
+
+    <!-- Buttons to save IN and OUT -->
+    <button id="save-in" disabled>Save IN</button>
+    <button id="save-out" disabled>Save OUT</button>
+
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <script>
+        const video = document.getElementById('video');
+        const resultContainer = document.getElementById('result');
+        const homeownerIdField = document.getElementById('homeowner-id');
+        const saveInBtn = document.getElementById('save-in');
+        const saveOutBtn = document.getElementById('save-out');
+
+        const scanner = new Instascan.Scanner({ video: video });
+
+        // Function to handle QR code validation
+        function validateQR(content) {
+            // Extract the relevant part of the content (assume it's a homeowner ID)
+            const homeownerID = content.substring(14, 20);
+
+            // Update the text field with the homeowner ID
+            homeownerIdField.value = homeownerID;
+
+            // Enable buttons if homeowner ID field has a value, otherwise disable them
+            if (homeownerIdField.value) {
+                saveInBtn.disabled = false;
+                saveOutBtn.disabled = false;
+            } else {
+                saveInBtn.disabled = true;
+                saveOutBtn.disabled = true;
+            }
+
+            resultContainer.innerHTML = `<p>Scanned content: ${content}</p>`;
+        }
+
+        scanner.addListener('scan', function (content) {
+            validateQR(content);
+        });
+
+        Instascan.Camera.getCameras().then(function (cameras) {
+            if (cameras.length > 0) {
+                scanner.start(cameras[0]);
+            } else {
+                console.error('No cameras found');
+            }
+        }).catch(function (e) {
+            console.error(e);
+        });
+
+        // Function to save IN or OUT
+        function saveLog(point) {
+            const homeownerID = homeownerIdField.value;
+
+            // Get the current date and time
+            const now = new Date();
+            const date = now.toISOString().split('T')[0]; // Get the date in YYYY-MM-DD format
+            const time = now.toTimeString().split(' ')[0]; // Get the time in HH:MM:SS format
+
+            // Send the data to the server for storage
+            fetch('save_log.php', {
+                method: 'POST',
+                body: JSON.stringify({ account_id: homeownerID, date: date, time: time, point: point }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                if (data.status === 'success') {
+                    // Show success alert
+                    alert('Success');
+                    // Clear the text field
+                    homeownerIdField.value = '';
+                    // Disable buttons again
+                    saveInBtn.disabled = true;
+                    saveOutBtn.disabled = true;
+                } else {
+                    // Show error alert
+                    alert('Failed to save log: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle error appropriately
+                alert('An error occurred: ' + error.message);
+            });
+        }
+
+        // Event listener for Save IN button
+        saveInBtn.addEventListener('click', function() {
+            saveLog('IN');
+        });
+
+        // Event listener for Save OUT button
+        saveOutBtn.addEventListener('click', function() {
+            saveLog('OUT');
+        });
+    </script>
+</body>
+</html>
