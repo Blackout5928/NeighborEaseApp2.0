@@ -11,10 +11,10 @@ if ($CN->connect_error) {
 // Retrieve form data
 $name = $_POST['name'];
 $email = $_POST['email'];
-$ownerName = $_POST['ownerName'];
 $houseNum = $_POST['houseNum'];
 $message = $_POST['message'];
-
+$contact = $_POST['contact_number'];
+$add = $_POST['add'];
 // Validate inputs
 $errors = [];
 if (strlen($name) < 4) {
@@ -22,9 +22,6 @@ if (strlen($name) < 4) {
 }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = "Please enter a valid email address.";
-}
-if (strlen($ownerName) < 4) {
-    $errors[] = "Please enter at least 4 characters for the homeowner's name.";
 }
 if (strlen($houseNum) < 1) {
     $errors[] = "Please enter at least 1 character for the house number.";
@@ -39,9 +36,25 @@ if (count($errors) > 0) {
     exit;
 }
 
+// Fetch homeowner details based on house number
+$query = "SELECT username FROM home_owner WHERE hnum = ?";
+$stmt = $CN->prepare($query);
+$stmt->bind_param("s", $houseNum);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $ownerName = $row['username']; // Assuming 'username' is the homeowner's name
+} else {
+    $errors[] = "No homeowner found with the provided house number.";
+    echo json_encode(['status' => 'error', 'message' => $errors]);
+    exit;
+}
+
 // Prepare and bind
-$stmt = $CN->prepare("INSERT INTO visits (Guest_name, Guest_email, HO_name, HO_housenum, message) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("sssss", $name, $email, $ownerName, $houseNum, $message);
+$stmt = $CN->prepare("INSERT INTO visits (Guest_name, Guest_email, HO_name, HO_housenum, message, guest_contact, guest_add) VALUES (?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("sssssss", $name, $email, $ownerName, $houseNum, $message, $contact, $add);
 
 // Execute the statement
 if ($stmt->execute()) {

@@ -234,7 +234,13 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <div class="form-group">
-                        <input type="text" name="ownerName" class="form-control form-control-lg form-control-a" placeholder="Home Owner Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                        <input type="text" name="contact_number" class="form-control form-control-lg form-control-a" placeholder="Your Contact Number" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                        <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                        <input type="text" name="add" class="form-control form-control-lg form-control-a" placeholder="Your Address" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                         <div class="validation"></div>
                         </div>
                     </div>
