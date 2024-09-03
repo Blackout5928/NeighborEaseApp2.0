@@ -99,12 +99,12 @@ if (!isset($_SESSION['id'])) {
           <div class="nav-wrapper">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="a-index.php">
+                <a class="nav-link active" href="g-index.php">
                   <i class="material-icons">edit</i>
                   <span>Dashboard</span>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link " href="a-post.php">
                   <i class="material-icons">vertical_split</i>
                   <span>Announcement Posts</span>
@@ -115,7 +115,7 @@ if (!isset($_SESSION['id'])) {
                   <i class="material-icons">note_add</i>
                   <span>Add New Post</span>
                 </a>
-              </li>
+              </li> -->
               <!-- <li class="nav-item">
                 <a class="nav-link " href="form-components.html">
                   <i class="material-icons">view_module</i>
@@ -123,12 +123,12 @@ if (!isset($_SESSION['id'])) {
                 </a>
               </li> -->
               <li class="nav-item">
-                <a class="nav-link " href="a-table.php">
+                <a class="nav-link " href="g-table.php">
                   <i class="material-icons">table_chart</i>
                   <span>Tables</span>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link " href="a-userp.php">
                   <i class="material-icons">person</i>
                   <span>User Profile</span>
@@ -139,7 +139,7 @@ if (!isset($_SESSION['id'])) {
                   <i class="material-icons">error</i>
                   <span>Errors</span>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </aside>

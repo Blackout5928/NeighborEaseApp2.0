@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Admin</title>
+    <title>Stuff Guard</title>
     <link href="images/ej-bg-remove.png" rel="icon">
     <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -90,13 +90,13 @@
           </form>
           <div class="nav-wrapper">
             <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link " href="a-index.php">
+              <!-- <li class="nav-item">
+                <a class="nav-link " href="g-index.php">
                   <i class="material-icons">edit</i>
                   <span>Dashboard</span>
                 </a>
-              </li>
-              <li class="nav-item">
+              </li> -->
+              <!-- <li class="nav-item">
                 <a class="nav-link " href="a-post.php">
                   <i class="material-icons">vertical_split</i>
                   <span>Announcement Posts</span>
@@ -105,33 +105,33 @@
               <li class="nav-item">
                 <a class="nav-link " href="a-cpost.php">
                   <i class="material-icons">note_add</i>
-                  <span>Add New Posts</span>
-                </a>
-              </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link " href="form-components.html">
-                  <i class="material-icons">view_module</i>
-                  <span>Forms &amp; Components</span>
+                  <span>Add New Post</span>
                 </a>
               </li> -->
               <li class="nav-item">
-                <a class="nav-link " href="a-table.php">
+                <a class="nav-link " href="g-table.php">
                   <i class="material-icons">table_chart</i>
                   <span>Tables</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="a-userp.php">
+                <a class="nav-link active" href="g-scanqr.php">
+                  <i class="material-icons">qr_code_scanner</i>
+                  <span>Qr Scanner</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="g-userp.php">
                   <i class="material-icons">person</i>
                   <span>User Profile</span>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link " href="register.php">
-                  <i class="material-icons">person_add</i>
+                  <i class="material-icons">add</i>
                   <span>Create Account</span>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </aside>
@@ -187,16 +187,16 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img class="user-avatar rounded-circle mr-2" src="images/software-engineer.png" alt="User Avatar">
-                    <span class="d-none d-md-inline-block">Admin Account</span>
+                    <img class="user-avatar rounded-circle mr-2" src="images/profile.png" alt="User Avatar">
+                    <span class="d-none d-md-inline-block">Sample Guard</span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
-                    <a class="dropdown-item" href="a-userp.php">
-                      <i class="material-icons">&#xE7FD;</i> Profile</a>
-                    <a class="dropdown-item" href="a-post.php">
-                      <i class="material-icons">vertical_split</i> Announcement Posts</a>
-                    <a class="dropdown-item" href="a-cpost.php">
-                      <i class="material-icons">note_add</i> Add New Post</a>
+                    <a class="dropdown-item" href="g-userp.php">
+                        <i class="material-icons">&#xE7FD;</i> Profile</a>
+                        <a class="dropdown-item" href="g-table.php">
+                        <i class="material-icons">table_chart</i>Tables</a>
+                        <a class="dropdown-item" href="g-scanqr.php">
+                        <i class="material-icons">qr_code_scanner</i> Qr Scanner</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="logout.php">
                       <i class="material-icons text-danger">&#xE879;</i> Logout </a>
@@ -211,118 +211,127 @@
             </nav>
           </div>
           <!-- / .main-navbar -->
-          <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-            <i class="fa fa-check mx-2"></i>
-            <strong>Success!</strong> Your profile has been updated! </div>
           <div class="main-content-container container-fluid px-4">
             <!-- Page Header -->
             <div class="page-header row no-gutters py-4">
               <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                 <span class="text-uppercase page-subtitle">Overview</span>
-                <h3 class="page-title">User Profile</h3>
+                <h3 class="page-title">Qr Code Sanner</h3>
               </div>
             </div>
             <!-- End Page Header -->
             <!-- Default Light Table -->
-            <div class="row">
-              <div class="col-lg-4">
-                <div class="card card-small mb-4 pt-3">
-                  <div class="card-header border-bottom text-center">
-                    <div class="mb-3 mx-auto">
-                      <img class="rounded-circle" src="images/software-engineer.png" alt="User Avatar" width="110"> </div>
-                      <button type="button" class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2">
-                      <i class="material-icons mr-1">change_circle</i>Change Profile Picture</button>
-                    <h4 class="mb-0">Admin Account</h4>
-                    <span class="text-muted d-block mb-2">Admin Account Manager</span>
-                    
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item px-4">
-                      <div class="progress-wrapper">
-                        <strong class="text-muted d-block mb-2">Workload</strong>
-                        <div class="progress progress-sm">
-                          <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;">
-                            <span class="progress-value">74%</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="list-group-item p-4">
-                      <strong class="text-muted d-block mb-2">Description</strong>
-                      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-8">
+            <!-- <div class="row">
+              <div class="col">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
-                    <h6 class="m-0">Account Details</h6>
+                    <h6 class="m-0">Active Users</h6>
                   </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item p-3">
-                      <div class="row">
-                        <div class="col">
-                          <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="feFirstName">Name</label>
-                                    <input type="text" class="form-control" id="feFirstName" placeholder="Account Name"> 
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="feFirstName">User Name</label>
-                                    <input type="text" class="form-control" id="UserName" placeholder="User Name"> 
-                                </div>
-                                <!-- <div class="form-group col-md-6">
-                                    <label for="feLastName">Last Name</label>
-                                    <input type="text" class="form-control" id="feLastName" placeholder="Last Name" value="Brooks"> 
-                                </div> -->
-                            </div>
-                            <div class="form-row">
-                              <div class="form-group col-md-6">
-                                <label for="feEmailAddress">Email</label>
-                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Email" value="sierra@example.com"> </div>
-                              <div class="form-group col-md-6">
-                                <label for="fePassword">Password</label>
-                                <input type="password" class="form-control" id="fePassword" placeholder="Password"> </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="feInputAddress">Address</label>
-                              <input type="text" class="form-control" id="feInputAddress" placeholder="1234 Main St"> </div>
-                            <!-- <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="feInputCity">City</label>
-                                    <input type="text" class="form-control" id="feInputCity"> </div>
-                                <div class="form-group col-md-4">
-                                    <label for="feInputState">State</label>
-                                    <select id="feInputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-2">
-                                    <label for="inputZip">Zip</label>
-                                    <input type="text" class="form-control" id="inputZip"> </div>
-                                </div>
-                                <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="feDescription">Description</label>
-                                    <textarea class="form-control" name="feDescription" rows="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?</textarea>
-                                </div>
-                            </div> -->
-                            <button type="submit" class="btn btn-accent">Update Account</button>
-                          </form>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+                  <div class="card-body p-0 pb-3 text-center">
+                    <table class="table mb-0">
+                      <thead class="bg-light">
+                        <tr>
+                          <th scope="col" class="border-0">#</th>
+                          <th scope="col" class="border-0">First Name</th>
+                          <th scope="col" class="border-0">Last Name</th>
+                          <th scope="col" class="border-0">Country</th>
+                          <th scope="col" class="border-0">City</th>
+                          <th scope="col" class="border-0">Phone</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Ali</td>
+                          <td>Kerry</td>
+                          <td>Russian Federation</td>
+                          <td>Gdańsk</td>
+                          <td>107-0339</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Clark</td>
+                          <td>Angela</td>
+                          <td>Estonia</td>
+                          <td>Borghetto di Vara</td>
+                          <td>1-660-850-1647</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Jerry</td>
+                          <td>Nathan</td>
+                          <td>Cyprus</td>
+                          <td>Braunau am Inn</td>
+                          <td>214-4225</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Colt</td>
+                          <td>Angela</td>
+                          <td>Liberia</td>
+                          <td>Bad Hersfeld</td>
+                          <td>1-848-473-7416</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- End Default Light Table -->
+            <!-- Default Dark Table -->
+            <!-- <div class="row">
+              <div class="col">
+                <div class="card card-small overflow-hidden mb-4">
+                  <div class="card-header bg-dark">
+                    <h6 class="m-0 text-white">Action/Time In & Out</h6>
+                  </div>
+                  <div class="card-body p-0 pb-3 bg-dark text-center">
+                  
+                    <table class="table table-dark mb-0">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col" class="border-bottom-0">Date</th>
+                          <th scope="col" class="border-bottom-0">Time</th>
+                          <th scope="col" class="border-bottom-0">Action</th>
+                          <th scope="col" class="border-bottom-0">Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        include 'connection.php';
+
+                        // Fetch data from the `announcement` table
+                        $sql = "SELECT `date`, `time`, `action`, `name` FROM `logs`";
+                        $result = $con->query($sql);
+
+                        // Check if there are results
+                        if ($result->num_rows > 0) {
+                            // Output data of each row
+                            while($row = $result->fetch_assoc()) {
+                        ?>
+                        <tr>
+                          <td><?php echo htmlspecialchars($row['date']); ?></td>
+                          <td><?php echo htmlspecialchars($row['time']); ?></td>
+                          <td><?php echo htmlspecialchars($row['action']); ?></td>
+                          <td><?php echo htmlspecialchars($row['name']); ?></td>
+                        </tr>
+                        <?php
+                            }
+                        } else {
+                            echo "<p>No Data found.</p>";
+                        }
+                        // Close the connection
+                        $con->close();
+                        ?>
+                      </tbody>
+                    </table>
+                    
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- End Default Dark Table -->
           </div>
           <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
             <!-- <ul class="nav">
@@ -343,7 +352,7 @@
               </li>
             </ul> -->
             <span class="copyright ml-auto my-auto mr-2">Created Project © 2024
-              <a href="file:///C:/Users/emman/Downloads/New-Project/index.html" rel="nofollow">EJ GreenScape Realty</a>
+              <a href="C:\xampp\htdocs\web-capstone\stuff\a-index.php" rel="nofollow">EJ GreenScape Realty</a>
             </span>
           </footer>
         </main>

@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect('localhost', 'root', '', 'neighborease');
+$con = mysqli_connect('localhost', 'root', '', 'admin_db');
 
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -8,18 +8,18 @@ if (mysqli_connect_errno()) {
 
 $q = $_REQUEST["q"];
 
-$esp8266_ip = "192.168.137.31"; // Define the IP address here
+$esp8266_ip = "192.168.73.20"; // Define the IP address here
 
 if ($q != "") {
     $trimmed_q = $q;
 
-    $stmt = $con->prepare("SELECT * FROM access_point WHERE account_id = ?");
+    $stmt = $con->prepare("SELECT * FROM logs WHERE account_id = ?");
     $stmt->bind_param("s", $trimmed_q);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows == 0) {
-        $stmt = $con->prepare("INSERT INTO access_point (account_id, date, time, point) VALUES (?, CURDATE(), CURTIME(), ?)");
+        $stmt = $con->prepare("INSERT INTO logs (account_id, date, time, point) VALUES (?, CURDATE(), CURTIME(), ?)");
         $point = "In";
         $stmt->bind_param("ss", $trimmed_q, $point);
         if ($stmt->execute()) {

@@ -118,7 +118,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="register.php">
-                        <i class="material-icons">add</i>
+                        <i class="material-icons">person_add</i>
                         <span>Create Account</span>
                         </a>
                     </li>
@@ -260,7 +260,7 @@
                                         <div class="mb-3 text-center">
                                             <button type="button" class="btn btn-primary" id="generateQRBtn" disabled>Generate QR Code</button>
                                             <button type="submit" class="btn btn-success" id="submitBtn" style="display: none;">Submit</button>
-                                            <a href="index.html" class="btn btn-danger">Cancel</a>
+                                            <a href="register.php" class="btn btn-danger">Cancel</a>
                                         </div>
                                         <div id="qrCodeContainer" class="text-center" style="display: none;">
                                             <img id="qrCodeImage" src="" alt="QR Code">
@@ -272,7 +272,7 @@
                     </div>
                 </div>
                 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
-                    <ul class="nav">
+                    <!-- <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Home</a>
                     </li>
@@ -288,9 +288,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Blog</a>
                     </li>
-                    </ul>
-                    <span class="copyright ml-auto my-auto mr-2">Created Project © 2023
-                    <a href="C:\xampp\htdocs\web-capstone\stuff\a-index.php" rel="nofollow">EJJ GreenScape Realty</a>
+                    </ul> -->
+                    <span class="copyright ml-auto my-auto mr-2">Created Project © 2024
+                    <a href="C:\xampp\htdocs\web-capstone\stuff\a-index.php" rel="nofollow">EJ GreenScape Realty</a>
                     </span>
                 </footer>
             </main>

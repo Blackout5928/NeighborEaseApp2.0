@@ -56,7 +56,7 @@
               <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
                 <div class="d-table m-auto">
                   <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 30px;" src="images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-                  <span class="d-none d-md-inline ml-1">EJJ GreenScape Realty</span>
+                  <span class="d-none d-md-inline ml-1">EJ GreenScape Realty</span>
                 </div>
               </a>
               <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -113,7 +113,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="register.php">
-                  <i class="material-icons">add</i>
+                  <i class="material-icons">person_add</i>
                   <span>Create Account</span>
                 </a>
               </li>
@@ -172,13 +172,13 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar">
-                    <span class="d-none d-md-inline-block">Sierra Brooks</span>
+                    <img class="user-avatar rounded-circle mr-2" src="images/software-engineer.png" alt="User Avatar">
+                    <span class="d-none d-md-inline-block">Admin Account</span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
-                    <a class="dropdown-item" href="user-profile-lite.html">
+                    <a class="dropdown-item" href="a-userp.php">
                       <i class="material-icons">&#xE7FD;</i> Profile</a>
-                    <a class="dropdown-item" href="components-blog-posts.html">
+                    <a class="dropdown-item" href="a-post.php">
                       <i class="material-icons">vertical_split</i> Announcement Posts</a>
                     <a class="dropdown-item" href="a-cpost.php">
                       <i class="material-icons">note_add</i> Add New Post</a>
@@ -311,7 +311,7 @@
             </div>
           </div>
           <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
-            <ul class="nav">
+            <!-- <ul class="nav">
               <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
               </li>
@@ -327,9 +327,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Blog</a>
               </li>
-            </ul>
-            <span class="copyright ml-auto my-auto mr-2">Created Project © 2023
-              <a href="C:\xampp\htdocs\web-capstone\stuff\a-index.php" rel="nofollow">EJJ GreenScape Realty</a>
+            </ul> -->
+            <span class="copyright ml-auto my-auto mr-2">Created Project © 2024
+              <a href="C:\xampp\htdocs\web-capstone\stuff\a-index.php" rel="nofollow">EJ GreenScape Realty</a>
             </span>
           </footer>
         </main>

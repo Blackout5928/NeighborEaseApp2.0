@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Admin</title>
+    <title>Stuff Guard</title>
     <link href="images/ej-bg-remove.png" rel="icon">
     <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -90,7 +90,7 @@
           </form>
           <div class="nav-wrapper">
             <ul class="nav flex-column">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link " href="a-index.php">
                   <i class="material-icons">edit</i>
                   <span>Dashboard</span>
@@ -107,7 +107,7 @@
                   <i class="material-icons">note_add</i>
                   <span>Add New Posts</span>
                 </a>
-              </li>
+              </li> -->
               <!-- <li class="nav-item">
                 <a class="nav-link " href="form-components.html">
                   <i class="material-icons">view_module</i>
@@ -115,23 +115,29 @@
                 </a>
               </li> -->
               <li class="nav-item">
-                <a class="nav-link " href="a-table.php">
+                <a class="nav-link " href="g-table.php">
                   <i class="material-icons">table_chart</i>
                   <span>Tables</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="a-userp.php">
+                <a class="nav-link " href="g-scanqr.php">
+                  <i class="material-icons">qr_code_scanner</i>
+                  <span>Qr Scanner</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="g-userp.php">
                   <i class="material-icons">person</i>
                   <span>User Profile</span>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link " href="register.php">
-                  <i class="material-icons">person_add</i>
+                  <i class="material-icons">add</i>
                   <span>Create Account</span>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </aside>
@@ -187,16 +193,16 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img class="user-avatar rounded-circle mr-2" src="images/software-engineer.png" alt="User Avatar">
-                    <span class="d-none d-md-inline-block">Admin Account</span>
+                    <img class="user-avatar rounded-circle mr-2" src="images/profile.png" alt="User Avatar">
+                    <span class="d-none d-md-inline-block">Sample Guard</span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
-                    <a class="dropdown-item" href="a-userp.php">
+                    <a class="dropdown-item" href="g-userp.php">
                       <i class="material-icons">&#xE7FD;</i> Profile</a>
-                    <a class="dropdown-item" href="a-post.php">
-                      <i class="material-icons">vertical_split</i> Announcement Posts</a>
-                    <a class="dropdown-item" href="a-cpost.php">
-                      <i class="material-icons">note_add</i> Add New Post</a>
+                      <a class="dropdown-item" href="g-table.php">
+                      <i class="material-icons">table_chart</i>Tables</a>
+                      <a class="dropdown-item" href="g-scanqr.php">
+                        <i class="material-icons">qr_code_scanner</i> Qr Scanner</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="logout.php">
                       <i class="material-icons text-danger">&#xE879;</i> Logout </a>
@@ -232,12 +238,11 @@
                 <div class="card card-small mb-4 pt-3">
                   <div class="card-header border-bottom text-center">
                     <div class="mb-3 mx-auto">
-                      <img class="rounded-circle" src="images/software-engineer.png" alt="User Avatar" width="110"> </div>
-                      <button type="button" class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2">
-                      <i class="material-icons mr-1">change_circle</i>Change Profile Picture</button>
-                    <h4 class="mb-0">Admin Account</h4>
-                    <span class="text-muted d-block mb-2">Admin Account Manager</span>
-                    
+                    <img class="rounded-circle" src="images/profile.png" alt="User Avatar" width="110"> </div>
+                    <button type="button" class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2">
+                        <i class="material-icons mr-1">change_circle</i>Change Profile Picture</button>
+                    <h4 class="mb-0">Sample Guard</h4>
+                    <span class="text-muted d-block mb-2">Guard</span>
                   </div>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item px-4">

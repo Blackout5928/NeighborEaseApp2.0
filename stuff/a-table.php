@@ -71,7 +71,7 @@
               <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
                 <div class="d-table m-auto">
                   <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 30px;" src="images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-                  <span class="d-none d-md-inline ml-1">EJJ GreenScape Realty</span>
+                  <span class="d-none d-md-inline ml-1">EJ GreenScape Realty</span>
                 </div>
               </a>
               <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -128,7 +128,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="register.php">
-                  <i class="material-icons">add</i>
+                  <i class="material-icons">person_add</i>
                   <span>Create Account</span>
                 </a>
               </li>
@@ -187,15 +187,15 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar">
-                    <span class="d-none d-md-inline-block">Sierra Brooks</span>
+                    <img class="user-avatar rounded-circle mr-2" src="images/software-engineer.png" alt="User Avatar">
+                    <span class="d-none d-md-inline-block">Admin Account</span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
-                    <a class="dropdown-item" href="user-profile-lite.html">
+                    <a class="dropdown-item" href="a-userp.php">
                       <i class="material-icons">&#xE7FD;</i> Profile</a>
-                    <a class="dropdown-item" href="components-blog-posts.html">
+                    <a class="dropdown-item" href="a-post.php">
                       <i class="material-icons">vertical_split</i> Announcement Posts</a>
-                    <a class="dropdown-item" href="add-new-post.html">
+                    <a class="dropdown-item" href="a-cpost.php">
                       <i class="material-icons">note_add</i> Add New Post</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="logout.php">
@@ -221,7 +221,7 @@
             </div>
             <!-- End Page Header -->
             <!-- Default Light Table -->
-            <div class="row">
+            <!-- <div class="row">
               <div class="col">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
@@ -277,60 +277,52 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- End Default Light Table -->
             <!-- Default Dark Table -->
             <div class="row">
               <div class="col">
                 <div class="card card-small overflow-hidden mb-4">
                   <div class="card-header bg-dark">
-                    <h6 class="m-0 text-white">Inactive Users</h6>
+                    <h6 class="m-0 text-white">Action/Time In & Out</h6>
                   </div>
                   <div class="card-body p-0 pb-3 bg-dark text-center">
                     <table class="table table-dark mb-0">
                       <thead class="thead-dark">
                         <tr>
-                          <th scope="col" class="border-bottom-0">#</th>
-                          <th scope="col" class="border-bottom-0">First Name</th>
-                          <th scope="col" class="border-bottom-0">Last Name</th>
-                          <th scope="col" class="border-bottom-0">Country</th>
-                          <th scope="col" class="border-bottom-0">City</th>
-                          <th scope="col" class="border-bottom-0">Phone</th>
+                          <th scope="col" class="border-bottom-0">House Number</th>
+                          <th scope="col" class="border-bottom-0">Date</th>
+                          <th scope="col" class="border-bottom-0">Time</th>
+                          <th scope="col" class="border-bottom-0">Access Point</th>
                         </tr>
                       </thead>
                       <tbody>
+                      <?php
+                        include 'connection.php';
+
+                        // Fetch data from the `announcement` table
+                        $sql = "SELECT `account_id`, `date`, `time`, `point` FROM `logs`";
+                        $result = $con->query($sql);
+
+                        // Check if there are results
+                        if ($result->num_rows > 0) {
+                            // Output data of each row
+                            while($row = $result->fetch_assoc()) {
+                        ?>
                         <tr>
-                          <td>1</td>
-                          <td>Graham</td>
-                          <td>Brent</td>
-                          <td>Benin</td>
-                          <td>Ripabottoni</td>
-                          <td>1-512-760-9094</td>
+                        <td><?php echo htmlspecialchars($row['account_id']); ?></td>
+                          <td><?php echo htmlspecialchars($row['date']); ?></td>
+                          <td><?php echo htmlspecialchars($row['time']); ?></td>
+                          <td><?php echo htmlspecialchars($row['point']); ?></td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Clark</td>
-                          <td>Angela</td>
-                          <td>Estonia</td>
-                          <td>Borghetto di Vara</td>
-                          <td>1-660-850-1647</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Wylie</td>
-                          <td>Joseph</td>
-                          <td>Korea, North</td>
-                          <td>Guelph</td>
-                          <td>325-4351</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Garth</td>
-                          <td>Clementine</td>
-                          <td>Indonesia</td>
-                          <td>Narcao</td>
-                          <td>722-8264</td>
-                        </tr>
+                        <?php
+                            }
+                        } else {
+                            echo "<p>No Data found.</p>";
+                        }
+                        // Close the connection
+                        $con->close();
+                        ?>
                       </tbody>
                     </table>
                   </div>
@@ -340,7 +332,7 @@
             <!-- End Default Dark Table -->
           </div>
           <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
-            <ul class="nav">
+            <!-- <ul class="nav">
               <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
               </li>
@@ -356,9 +348,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Blog</a>
               </li>
-            </ul>
-            <span class="copyright ml-auto my-auto mr-2">Created Project © 2023
-              <a href="C:\xampp\htdocs\web-capstone\stuff\a-index.php" rel="nofollow">EJJ GreenScape Realty</a>
+            </ul> -->
+            <span class="copyright ml-auto my-auto mr-2">Created Project © 2024
+              <a href="C:\xampp\htdocs\web-capstone\stuff\a-index.php" rel="nofollow">EJ GreenScape Realty</a>
             </span>
           </footer>
         </main>
